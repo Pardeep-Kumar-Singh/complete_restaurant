@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style1.css">
+    <link rel="icon" type="image/png" href="footer-logo-1.png">
+    <title>restaurant</title>
+</head>
+
+<body>
+    <div class="header">
+        <img src="logo.png" class="logo">
+        <nav>
+            <div class="aligner">
+                <ul>
+                    <li><a href="#">ABOUT US</a></li>
+                    <li><a href="#">MENU</a></li>
+                    <li><a href="#"><span>ROOMS</span></a></li>
+                    <li><a href="#">WHY US</a></li>
+                    <li><a href="#">GALLERY</a></li>
+                    <li><a href="#">BLOG</a></li>
+                    <li><a href="#">CONTACT US</a></li>
+                </ul>
+                <img src="volume-off.png" class="volume">
+            </div>
+        </nav>
+    </div>
+
+    <div class="slider"></div>
+
+    <div class="gallery1">
+        <img src="images/1.jpg" onclick="FullView(this.src)" />
+        <img src="images/2.jpg" onclick="FullView(this.src)" />
+        <img src="images/3.jpg" onclick="FullView(this.src)" />
+        <img src="images/4.jpg" onclick="FullView(this.src)" />
+        <img src="images/5.jpg" onclick="FullView(this.src)" />
+        <img src="images/6.jpg" onclick="FullView(this.src)" />
+        <img src="images/7.jpg" onclick="FullView(this.src)" />
+        <img src="images/8.jpg" onclick="FullView(this.src)" />
+        <img src="images/9.jpg" onclick="FullView(this.src)" />
+    </div>
+    <div id="fullimageview">
+        <img id="FullImage" />
+        <span id="CloseButton" onclick="closeFullView()">&times;</span>
+    </div>
+
+    <script type="text/javascript">
+        function FullView(ImgLink) {
+            document.getElementById("FullImage").src = ImgLink;
+            document.getElementById("fullimageview").style.display = "block";
+        }
+        function closeFullView() {
+            document.getElementById("fullimageview").style.display = "none";
+        }
+    </script>
+
+    <script>
+        var icon = document.querySelector(".volume");
+        var icon2 = document.querySelector(".logo");
+
+        var audioElem = document.createElement("audio");
+
+        audioElem.setAttribute('src', 'amrik-audio.mp3');
+        audioElem.setAttribute("autoplay", "autoplay")
+
+        icon.onclick = ('load', function () {
+            audioElem.pause();
+            icon.setAttribute('src', 'volume-off.png');
+        });
+        icon2.onclick = ('load', function () {
+            audioElem.play();
+            icon.setAttribute('src', 'volume-on.gif');
+        });
+    </script>
+</body>
+
+</html>
